@@ -63,7 +63,7 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    "@nuxtjs/pwa",
+    ["@nuxtjs/pwa"],
     ["nuxt-i18n", I18N],
     "@nuxtjs/markdownit",
     "nuxt-webfontloader",
@@ -100,8 +100,9 @@ export default {
    ** PWA Configuration
    */
   pwa: {
-    workbox: {
-      dev: false
+    icon: {
+      iconSrc: "~/static/icon.png",
+      iconFileName: "icon.png"
     },
     manifest: {
       name: "My Awesome App",
@@ -109,9 +110,7 @@ export default {
       lang: "en",
       start_url: "/index.html",
       theme_color: "#ed9a9c",
-      cacheAssets: true,
-      pagesURLPattern: "/",
-      assetsURLPattern: "/_nuxt/"
+      cacheAssets: true
     }
   },
   /*
