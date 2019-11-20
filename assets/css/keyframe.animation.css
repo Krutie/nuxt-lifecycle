@@ -1,0 +1,139 @@
+.page-enter-active,
+.page-leave-active {
+    transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-active {
+    opacity: 0;
+}
+
+.loading-bar {
+    stroke-dasharray: 1500;
+    animation: dash 5s linear;
+}
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 1500;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes wiggle {
+    0%,
+    100% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes scale {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.expand-enter-active {
+    animation: expand 0.5s;
+}
+.expand-leave-active {
+    animation: expand 0.5s reverse;
+}
+@keyframes expand {
+    0% {
+        width: 0px;
+        opacity: 0;
+    }
+    100% {
+        width: 200px;
+        opacity: 1;
+    }
+}
+/*TEXT-BOOK EXAMPLE*/
+.bounce-enter-active {
+    animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+    animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/*FLY IN FROM LEFT - NEXT BUTTON*/
+.slide-left-enter-active {
+    animation: slide-left 0.5s ease-out;
+}
+
+.slide-left-leave-active {
+    animation: slide-left 0.5s reverse ease-out;
+}
+
+@keyframes slide-left {
+    0% {
+        left: -10%;
+    }
+    100% {
+        left: 2%;
+    }
+}
+
+/*FLY IN FROM RIGHT - NEXT BUTTON*/
+.slide-right-enter-active {
+    animation: fly-watermelon 0.5s ease-out;
+}
+
+.slide-right-leave-active {
+    animation: slide-right 0.5s reverse ease-out;
+}
+
+@keyframes slide-right {
+    0% {
+        right: -10%;
+    }
+    100% {
+        right: 2%;
+    }
+}
+
+/*FLY IN FROM TOP - FOR CLOSE BUTTON*/
+@keyframes fly-intop {
+    0% {
+        top: -10%;
+    }
+    100% {
+        top: 5%;
+    }
+}
+.fly-in-top-enter-active {
+    animation: fly-intop 1s ease-out;
+}
+
+.fly-in-top-leave-active {
+    animation: fly-intop 0.5s reverse ease-out;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s;
+    opacity: 0.8;
+}
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}

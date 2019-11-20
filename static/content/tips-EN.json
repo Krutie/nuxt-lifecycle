@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Server Initialisation",
+        "text": "Unlike other hooks we are about to learn, this is the only hook that's not defined on page component!",
+        "completed": false
+    },
+    {
+        "title": "Route Middleware",
+        "text": "Middleware allows you to intercept incoming request and conditionally modify or enforce business logic before serving the page on client-side.",
+        "completed": false
+    },
+    {
+        "title": "Validating Route Params",
+        "text": "Validate hook does exactly what the term suggests, it validates parameter defined in dynamic routes.",
+        "completed": false
+    },
+    {
+        "title": "Fetch and set initial data",
+        "text": "You can pull data into page component and set them locally using asyncData method. asyncData() is called every time before loading page component.",
+        "completed": false
+    }
+]

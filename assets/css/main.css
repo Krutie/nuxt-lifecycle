@@ -1,0 +1,390 @@
+html {
+    @apply subpixel-antialiased text-65-xxl;
+}
+body {
+    @apply overflow-hidden font-sans text-2xl bg-white text-white;
+}
+.translate-center {
+    @apply absolute left-50;
+    transform: translate(-50%, -50%);
+}
+.hide {
+    @apply hidden;
+}
+/* INTRODUCTION - STARTS */
+
+.introduction {
+    @apply translate-center text-center top-50 h-full w-full;
+    & .tips {
+        & .title {
+            top: 25%;
+            display: inline;
+            /*opacity: 0;*/
+        }
+        & .lines {
+            @apply translate-center;
+            top: 37%;
+
+            & span {
+                @apply text-3xl font-bold;
+                display: block;
+                opacity: 0;
+            }
+        }
+        & .indicators {
+            top: 75%;
+            & span {
+                @apply opacity-100 text-2xl font-normal;
+                margin: 0 10px;
+                display: inline-block;
+            }
+            & .material-icons {
+                @apply opacity-50;
+            }
+            & .active {
+                opacity: 1 !important;
+            }
+        }
+        & .heading {
+            @apply fixed top-40 left-50 p-10 rounded-full border-2 z-20;
+            @apply font-sans font-bold text-3xl text-center;
+            @apply flex justify-center;
+            transform: translate(-50%, 0);
+            box-shadow: 0px 0px 11px 5px #06060638;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-color: #a83973;
+            color: #a83973;
+        }
+    }
+}
+/* INTRODUCTION - ENDS */
+
+/*layout/default.vue*/
+.slide-show {
+    @apply translate-center text-center w-9/12 z-20;
+    top: 75%;
+}
+
+/* ANIMATEDTITLE.DEFAULT COMPONENT STARTS */
+.title {
+    top: 25%;
+    @apply translate-center font-display tracking-wide whitespace-pre text-5xl uppercase;
+    & span {
+        @apply relative inline-block opacity-0;
+        text-rendering: geometricPrecision;
+        text-shadow: 1px 1px 1px rgba(173, 58, 114, 0.4);
+    }
+}
+.site-title {
+    @apply text-6xl;
+    top: 15% !important;
+}
+/* ANIMATEDTITLE.DEFAULT COMPONENT ENDS */
+
+/* ARC.DEFAULT COMPONENT STARTS */
+.timeline-arc {
+    @apply left-0 top-52 w-full h-full absolute;
+    & .arc {
+        @apply top-0 opacity-25 stroke-white;
+        position: inherit;
+        stroke-width: 4;
+    }
+    & .arc-opaque {
+        @apply top-0 opacity-10 stroke-white;
+        stroke-width: 3;
+    }
+}
+/* ARC.DEFAULT COMPONENT ENDS */
+
+/* CIRCLET.DEFAULT COMPONENT STARTS (SVG STYLE) */
+.inner-circle {
+    fill: hsla(0, 0%, 100%, 0.9);
+}
+.outer-circle {
+    stroke: white;
+    opacity: 0.5;
+    fill-opacity: 0;
+    stroke-width: 5px;
+    stroke-dasharray: 0.05, 7;
+    stroke-linecap: round;
+}
+/* CIRCLET.DEFAULT COMPONENT ENDS */
+
+/* BASE/Navigation.vue starts */
+#page-navigation {
+    & .btn {
+        @apply absolute top-40 p-2 text-center cursor-pointer;
+        @apply flex flex-col items-center z-10;
+        @apply;
+        text-shadow: 1px 1px 1px rgba(173, 58, 114, 0.2);
+    }
+    & .back {
+        @apply left-2;
+    }
+    & .next {
+        @apply right-2;
+    }
+}
+/* BASE/Navigation.vue ENDS */
+
+/* BASE/NAVINDICATORS.vue STARTS */
+.nav-indicators {
+    @apply translate-center flex top-5;
+    & span {
+        @apply opacity-50 cursor-pointer m-6;
+    }
+    & .active {
+        @apply opacity-100;
+    }
+}
+/* BASE/NAVINDICATORS.vue ENDS */
+
+/* LAYOUTS/NAVBAR.vue STARTS */
+.close {
+    @apply absolute top-2 left-2 cursor-pointer flex flex-col text-center;
+}
+.i18n {
+    @apply absolute top-2 right-2;
+}
+/* LAYOUTS/NAVBAR.vue ENDS */
+
+/* LAYOUTS/DEFAULT.vue STARTS */
+.mega-menu {
+    & .elements-container {
+        @apply absolute flex h-150 left-50 pt-13/2 z-10 top-47;
+        transform-origin: bottom center;
+        transform: translate(-50%, 0);
+        transition: height, top 1.5s;
+        pointer-events: visible;
+        & .outer-element {
+            @apply h-30 m-0 p-0 opacity-0 list-none;
+            & .scaled-up {
+                @apply ml-10 mr-10 cursor-pointer;
+                @apply w-48 h-48;
+                & div {
+                    & .material-icons {
+                        @apply text-7/2;
+                    }
+                }
+            }
+            & .scaled-up:hover {
+                animation: scale 1s ease-out infinite;
+            }
+            & .scaled-down {
+                @apply ml-2 mr-2;
+                @apply w-32 h-32;
+                @apply bg-white;
+                & div {
+                    & .material-icons {
+                        @apply text-4xl;
+                    }
+                }
+            }
+            & .scaled-down:hover {
+                animation: wiggle 1s ease-out infinite;
+            }
+            & .inner-element {
+                @apply relative text-center inline-block rounded-full;
+                /*Original cricles with dotted border*/
+                @apply border-dotted border-2;
+                transition: all 1.2s;
+                & div {
+                    @apply translate-center w-90 h-90 top-50 bg-white;
+                    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
+                    border-radius: inherit;
+                    & span {
+                        @apply absolute top-50 left-50;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+                & .active {
+                    border: 2px solid;
+                    transition: all 0.5s;
+                }
+            }
+        }
+    }
+    & .opened {
+        top: -4rem;
+        & .outer-element {
+            & .scaled-down {
+                @apply bg-transparent border-0;
+            }
+        }
+    }
+}
+
+@media (max-height: 1366px) {
+    .content-open {
+        bottom: calc(-8vh - 8.4rem);
+    }
+}
+
+@media (min-width: 1024px) {
+    .mega-menu {
+        & .elements-container {
+            @apply h-250 pt-9/2;
+            & .outer-element {
+                & .scaled-up {
+                    @apply h-64 w-64;
+                }
+            }
+        }
+        & .opened {
+            top: -2.5rem;
+        }
+    }
+}
+/* LAYOUTS/DEFAULT.vue ENDS */
+
+/* layouts/default.vue Starts */
+footer {
+    & .nuxt {
+        & svg {
+            height: 10%;
+            width: 25%;
+            bottom: 0%;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 1.5s;
+        }
+        & .open {
+            bottom: -15%;
+        }
+    }
+    & .nuxt-summary svg {
+        bottom: 50%;
+        transition-delay: 4.5s;
+    }
+}
+/* layouts/default.vue Ends */
+
+/* pages/index.vue starts */
+#home {
+    @apply translate-center flex flex-col items-center text-center justify-center;
+    @apply top-65 h-full w-3/4;
+    & h2 {
+        @apply absolute top-22 text-4xl;
+    }
+    & .heading {
+        @apply fixed top-50 left-50 p-10 rounded-full border-2 z-20;
+        @apply font-sans font-bold text-3xl text-center;
+        @apply flex justify-center;
+        transform: translate(-50%, 0);
+        box-shadow: 0px 0px 11px 5px #06060638;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-color: #a83973;
+        color: #a83973;
+    }
+}
+/* pages/index.vue ends */
+
+/* pages/_slug.vue page Starts */
+.content-close {
+    transition-duration: 0.5s;
+    bottom: -100vh;
+}
+.content-open {
+    transition-duration: 1s;
+    bottom: calc(-7vh - 8.4rem);
+}
+.content {
+    @apply absolute left-0 text-black w-full h-full text-2xl;
+    overflow: scroll;
+    background-color: white;
+    transition-property: bottom;
+    & .heading {
+        @apply fixed top-14 left-50 p-10 bg-white rounded-full border-2 z-20;
+        @apply font-sans font-bold text-3xl text-center;
+        @apply flex justify-center;
+        transform: translate(-50%, 0);
+        box-shadow: 0px 0px 11px 5px #06060638;
+    }
+    & .elastic-rect {
+        height: 100vh;
+        & .drawer-top {
+            fill: #fff;
+        }
+    }
+    & .active-page {
+        @apply absolute w-3/4 z-10 left-50 top-0;
+        transform: translate(-50%, 0%);
+        padding-top: 50px;
+        padding-bottom: 200px;
+        & h2 {
+            @apply font-sans text-4xl;
+        }
+        & pre {
+            @apply rounded p-4 text-xl my-8 overflow-x-scroll;
+            background: #fbe8c1;
+        }
+        & p {
+            margin-top: 10px;
+            line-height: 2.5rem;
+            & code {
+                @apply rounded p-1 text-xl;
+                background: #f3b4b0;
+            }
+        }
+    }
+}
+/* pages/_slug.vue page Ends */
+
+.error-container {
+    @apply translate-center text-black text-center p-20 mt-64;
+    z-index: 9999;
+}
+
+/* pages/summary.vue */
+.result-container {
+    @apply translate-center top-50 rounded-full;
+    height: 650px;
+    width: 650px;
+    box-shadow: 2px 1px 1px 2px #f8dac7;
+    & .title {
+        top: -5%;
+    }
+    & .inner-result-container {
+        @apply translate-center top-50 rounded-full;
+        height: 610px;
+        width: 610px;
+        background: rgba(0, 0, 0, 0.04);
+        & .inner-result-border {
+            @apply translate-center top-50 rounded-full;
+            height: 500px;
+            width: 500px;
+            background: rgba(0, 0, 0, 0.1);
+            border: 3px solid #d17688;
+            & .result-title {
+                @apply flex flex-col items-center justify-center font-bold;
+                height: 620px;
+                & div {
+                    width: 300px;
+                    text-align: center;
+                }
+            }
+            & .invisible-box {
+                @apply translate-center top-50;
+                height: 290px;
+                width: 290px;
+                & .result-circle {
+                    @apply absolute top-50 rounded-full text-center opacity-75;
+                    @apply border-dotted border-white border-2 cursor-pointer;
+                    height: 90px;
+                    width: 90px;
+                    left: 100%;
+                    top: -20%;
+                    line-height: 98px;
+                    & span {
+                        @apply bg-white rounded-full p-8 text-4xl;
+                    }
+                    & .active {
+                        @apply border-2;
+                        transition: opacity 0.5s;
+                    }
+                }
+            }
+        }
+    }
+}

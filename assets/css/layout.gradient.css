@@ -1,0 +1,75 @@
+/* components/InteractiveLayout/Gradient.vue - Starts */
+.bg-container {
+  @apply overflow-hidden absolute top-0 left-0;
+  & .gradient {
+    @apply flex fixed top-0 left-0 h-full;
+    width: 500%;
+    will-change: transform, opacity;
+    & .segment {
+      @apply flex relative w-full border-none;
+      margin: 0 -1px;
+      will-change: transform, opacity;
+    }
+    & .intro {
+      background-image: linear-gradient(90deg, #f8dac7, #f1a29b);
+      background-color: #f1a29b;
+    }
+
+    & .morning {
+      background-image: linear-gradient(90deg, #f1a29b, #ed8e85);
+      background-color: #ed8e85;
+    }
+    & .afternoon {
+      background-image: linear-gradient(90deg, #ed8e85, #e67b80);
+      background-color: #e67b80;
+    }
+
+    & .evening {
+      background-image: linear-gradient(90deg, #e67b80, #b85189);
+      background-color: #b85189;
+    }
+
+    & .night {
+      background-image: linear-gradient(90deg, #b85189, #a53e83);
+      background-color: #a53e83;
+    }
+  }
+
+  & .back-drop {
+    @apply absolute top-0 h-full w-full bg-bottom bg-cover;
+    background-image: url("/background.png");
+  }
+
+  & .circle-container {
+    @apply flex relative h-screen w-screen;
+    margin-top: 5%;
+    will-change: auto;
+    & .sun {
+      height: 160px;
+      width: 160px;
+      background-color: #fae3b0 !important;
+      opacity: 1 !important;
+    }
+    & .circle {
+      @apply rounded-full absolute bg-white;
+      opacity: 0.06;
+      transform: translate(-50%, -50%);
+    }
+    & .circle1 {
+      height: 84rem;
+      width: 84rem;
+    }
+    & .circle2 {
+      height: 146rem;
+      width: 146rem;
+    }
+    & .circle3 {
+      height: 208rem;
+      width: 208rem;
+    }
+    & .circle4 {
+      height: 270rem;
+      width: 270rem;
+    }
+  }
+}
