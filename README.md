@@ -1,10 +1,10 @@
-# nuxt-is-best-framework-2019
+# learn-nuxt-lifecycle-hooks-in-a-day
 
 > My shining Nuxt.js project
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ npm run install
 
