@@ -1,6 +1,4 @@
-## Page Middleware
-
-They are registered on page components.
+Page Middleware are registered on page components.
 
 If an application requires middleware for a specific route, assign the middleware key in page component directly. This way, middleware will be called for this specific page.
 

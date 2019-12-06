@@ -1,6 +1,4 @@
-## Global Middleware
-
-They are registered in Nuxt configuration
+Global Middleware are registered in Nuxt configuration.
 
 Use this option, when middleware is required for **every incoming request**. They will be called every time the route changes within app.
 
@@ -19,5 +17,3 @@ export default context => {
     console.log("1. App-wide middleware called from nuxt config");
 };
 ```
-
-Use `npm run dev` and access any routes on `localhost:3000`. Notice how middleware has run after nuxtServerinit.

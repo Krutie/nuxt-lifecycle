@@ -74,7 +74,7 @@ export default {
    */
   webfontloader: {
     google: {
-      families: ["Quicksand:400,700", "Lilita+One&display=swap"]
+      families: ["Quicksand:300,400,700", "Lilita+One&display=swap"]
     }
   },
   /*

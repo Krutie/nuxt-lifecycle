@@ -1,6 +1,4 @@
-## Layout Middleware
-
-Also, known as group middleware, they are registered in layouts.
+Layout Middleware are also known as group middleware and they are registered in layouts.
 
 Layout middleware makes it more convenient to assign a single middleware to specific set of pages. Register middleware at layout level and simply use this layout for a group of pages.
 

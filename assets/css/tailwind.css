@@ -8,8 +8,8 @@
 
 /* purgecss start ignore */
 @import "./main.css";
-@import "./layout.gradient.css";
-/*@import "./layout.rainbow.gradient.css";*/
+/*@import "./layout.gradient.css";*/
+@import "./layout.rainbow.gradient.css";
 @import "./keyframe.animation.css";
 @import "material-icons/iconfont/material-icons.css";
 /* purgecss end ignore */

@@ -21,6 +21,9 @@
             </div>
         </expand-button>
         <div class="active-page">
+            <div :style="{ color: activePage.color }" class="topic">
+                {{ activePage.title }}
+            </div>
             <div v-html="content"></div>
             <hr />
         </div>
